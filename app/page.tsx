@@ -1,7 +1,11 @@
+"use client"; 
+
 import Image from "next/image";
 import React from "react";
 import { Sarabun, Kodchasan, Poppins } from "next/font/google";
 import { LucideIcon, Search, Edit, DollarSign, Users, BarChart2, Share2, MessageSquare } from "lucide-react";
+import { motion } from "framer-motion";
+import { FaInstagram, FaFacebook, FaLinkedinIn, FaPinterest } from "react-icons/fa";
 
 const sarabun = Sarabun({
   variable: "--font-roboto",
@@ -111,28 +115,49 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="bg-white text-black flex flex-col items-center py-20">
+      <section className="bg-white text-black flex flex-col items-center py-20 overflow-hidden">
         <h2 className="text-9xl text-right mx-72 font-bold mb-10">BRANDS WE WORKED WITH</h2>
-        <div className="grid grid-cols-5 gap-6 max-w-6xl">
-          {Array.from({ length: 5 }, (_, i) => (
-            <div key={i} className="flex justify-center items-center">
-              <Image src={`/companies/${i + 1}.jpeg`} alt={`Company ${i + 1}`} width={200} height={200} className="object-contain" />
-            </div>
-          ))}
+        
+        {/* First row - scrolling left to right */}
+        <div className="w-full relative overflow-hidden py-8">
+          <motion.div 
+            className="flex"
+            animate={{ x: [0, -1500] }}
+            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          >
+            {Array.from({ length: 26 }, (_, i) => (
+              <div key={i} className="flex-shrink-0 mx-6">
+                <Image 
+                  src={`/companies/${(i % 13) + 1}.jpeg`} 
+                  alt={`Company ${(i % 13) + 1}`} 
+                  width={180}  // Increased from 120
+                  height={180}  // Increased from 120
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </motion.div>
         </div>
-        <div className="grid grid-cols-4 gap-16 max-w-6xl mt-6">
-          {Array.from({ length: 16 }, (_, i) => (
-            <div key={i + 5} className="flex justify-center items-center">
-              <Image src={`/companies/${i + 6}.jpeg`} alt={`Company ${i + 6}`} width={200} height={200} className="object-contain" />
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-5 gap-8 max-w-6xl mt-6">
-          {Array.from({ length: 5 }, (_, i) => (
-            <div key={i + 21} className="flex justify-center items-center">
-              <Image src={`/companies/${i + 22}.jpeg`} alt={`Company ${i + 22}`} width={200} height={200} className="object-contain" />
-            </div>
-          ))}
+        
+        {/* Second row - scrolling right to left */}
+        <div className="w-full relative overflow-hidden py-8">
+          <motion.div 
+            className="flex"
+            animate={{ x: [-1500, 0] }}
+            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          >
+            {Array.from({ length: 26 }, (_, i) => (
+              <div key={i + 26} className="flex-shrink-0 mx-6">
+                <Image 
+                  src={`/companies/${(i % 13) + 14}.jpeg`} 
+                  alt={`Company ${(i % 13) + 14}`} 
+                  width={180}  // Increased from 120
+                  height={180}  // Increased from 120
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
       <section className="bg-white text-black flex flex-col items-center py-20">
@@ -147,7 +172,39 @@ export default function Home() {
             +91-9202509190
           </div>
         </div>
-        <div className="mt-[450px]">
+        
+        {/* Social Media Links */}
+        <div className="flex flex-row items-center justify-center space-x-8 mt-10">
+          <a href="https://www.instagram.com/quantalyze_marketer?igsh=NTFnbjg3cjBudWtq" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="p-4 bg-[#E7E5DF] rounded-full hover:bg-[#FFD700] transition-colors duration-300">
+            <FaInstagram size={32} />
+          </a>
+          
+          <a href="https://www.facebook.com/share/1Hh9De7gfW/?mibextid=wwXIfr" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="p-4 bg-[#E7E5DF] rounded-full hover:bg-[#FFD700] transition-colors duration-300">
+            <FaFacebook size={32} />
+          </a>
+          
+          <a href="https://www.linkedin.com/in/abhay-raj-a78210233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="p-4 bg-[#E7E5DF] rounded-full hover:bg-[#FFD700] transition-colors duration-300">
+            <FaLinkedinIn size={32} />
+          </a>
+          
+          <a href="https://pin.it/59YL9gBeo" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="p-4 bg-[#E7E5DF] rounded-full hover:bg-[#FFD700] transition-colors duration-300">
+            <FaPinterest size={32} />
+          </a>
+        </div>
+        
+        <div className="mt-[350px]">
           <Image src="/quantalyze.png" alt="Quantalyze" width={1920} height={1080} className="w-60 h-auto object-contain" />
         </div>
         <div className="text-center mt-10 text-2xl">
