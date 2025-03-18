@@ -1,14 +1,30 @@
 import Image from "next/image";
 import React from "react";
+import {Sarabun} from "next/font/google";
+import { Kodchasan } from "next/font/google";
+
+const roboto = Sarabun({
+  variable: "--font-roboto",
+  subsets: ["latin"],
+  weight: "400"
+});
+
+
+const amaranth = Kodchasan({
+  variable: "--font-alata",
+  subsets: ["latin"],
+  weight: "400"
+});
+
 
 export default function Home() {
   return (
     <>
       <section className="">
         <div className="flex flex-col items-center bg-black text-white w-screen min-h-screen">
-          <h2 className="text-4xl font-bold my-20">WELCOME TO</h2>
-          <h1 className="text-8xl font-bold">QUANTALYZE</h1>
-          <h3 className="text-3xl font-bold my-20">SOCIAL MEDIA MARKETING</h3>
+          <h2 className={`text-5xl font-bold my-20 ${roboto.className}`}>WELCOME TO</h2>
+          <h1 className={`text-9xl font-bold ${amaranth.className}`}>QUANTALYZE</h1>
+          <h3 className={`text-5xl font-bold my-20 ${roboto.className}`}>SOCIAL MEDIA MARKETING</h3>
           <div className="w-full h-auto">
             <Image src="/Hero.png" alt="Hero" width={1920} height={1080} className="w-full h-auto object-contain" />
           </div>
@@ -92,6 +108,26 @@ export default function Home() {
               <Image src={`/companies/${i + 22}.jpeg`} alt={`Company ${i + 22}`} width={200} height={200} className="object-contain" />
             </div>
           ))}
+        </div>
+      </section>
+      <section className="bg-white text-black flex flex-col items-center py-20">
+        <div className="w-3/4 flex justify-center mb-10">
+          <Image src="/getintouch.png" alt="Get in Touch" width={1920} height={1080} className="w-full h-auto object-contain" />
+        </div>
+        <div className="w-full flex flex-col items-center space-y-4">
+          <div className="bg-[#E7E5DF] text-center py-8 px-8 border-2 border-black w-3/4">
+            CONTACTUS@QUANTALYZEMARKETER.COM
+          </div>
+          <div className="bg-[#E7E5DF] text-center py-8 px-8 border-2 border-black w-3/4">
+            +91-9202509190
+          </div>
+        </div>
+        <div className="mt-[450px]">
+          <Image src="/quantalyze.png" alt="Quantalyze" width={1920} height={1080} className="w-40 h-auto object-contain" />
+        </div>
+        <div className="text-center mt-10">
+          <p className="text-lg">LEVEL UP YOUR BRAND'S SOCIAL MEDIA GAME!</p>
+          <p className="text-lg">CONNECT WITH US TODAY AND LET'S CREATE A WINNING STRATEGY TOGETHER.</p>
         </div>
       </section>
     </>
