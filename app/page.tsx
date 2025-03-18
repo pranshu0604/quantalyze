@@ -70,6 +70,30 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <section className="bg-white text-black flex flex-col items-center py-20">
+        <h2 className="text-5xl font-bold mb-10">BRANDS WE WORKED WITH</h2>
+        <div className="grid grid-cols-5 gap-6 max-w-6xl">
+          {Array.from({ length: 5 }, (_, i) => (
+            <div key={i} className="flex justify-center items-center">
+              <Image src={`/companies/${i + 1}.jpeg`} alt={`Company ${i + 1}`} width={200} height={200} className="object-contain" />
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-4 gap-6 max-w-6xl mt-6">
+          {Array.from({ length: 16 }, (_, i) => (
+            <div key={i + 5} className="flex justify-center items-center">
+              <Image src={`/companies/${i + 6}.jpeg`} alt={`Company ${i + 6}`} width={200} height={200} className="object-contain" />
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-5 gap-6 max-w-6xl mt-6">
+          {Array.from({ length: 5 }, (_, i) => (
+            <div key={i + 21} className="flex justify-center items-center">
+              <Image src={`/companies/${i + 22}.jpeg`} alt={`Company ${i + 22}`} width={200} height={200} className="object-contain" />
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
