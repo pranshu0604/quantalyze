@@ -208,8 +208,8 @@ export default function Home() {
           <Image src="/quantalyze.png" alt="Quantalyze" width={1920} height={1080} className="w-60 h-auto object-contain" />
         </div>
         <div className="text-center mt-10 text-2xl">
-          <p>LEVEL UP YOUR BRAND'S SOCIAL MEDIA GAME!</p>
-          <p>CONNECT WITH US TODAY AND LET'S CREATE A WINNING STRATEGY TOGETHER.</p>
+          <p>LEVEL UP YOUR BRAND&apos;S SOCIAL MEDIA GAME!</p>
+          <p>CONNECT WITH US TODAY AND LET&apos;S CREATE A WINNING STRATEGY TOGETHER.</p>
         </div>
       </section>
     </>
