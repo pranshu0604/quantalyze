@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { Sarabun, Kodchasan, Poppins } from "next/font/google";
-import { LucideIcon, Search, Edit, DollarSign, Users, BarChart2, Share2, MessageSquare } from "lucide-react";
+import { Search, Edit, DollarSign, Users, BarChart2, Share2, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaInstagram, FaFacebook, FaLinkedinIn, FaPinterest } from "react-icons/fa";
 
@@ -105,7 +105,7 @@ export default function Home() {
         </div>
         <div className={`max-w-5xl text-left text-2xl ${poppins.className}`}>
           <p className="mb-4">
-            Choose us to experience a partnership that’s as committed to <strong>your brand’s success</strong> as you are.
+            Choose us to experience a partnership that&apos;s as committed to <strong>your brand&apos;s success</strong> as you are.
           </p>
           <p className="mb-4">
             Since we recognize that each brand has its own distinct identity and goals. Our approach is rooted in tailoring <strong>strategies</strong> that not only align with your vision but amplify it.
