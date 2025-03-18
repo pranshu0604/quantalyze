@@ -1,18 +1,23 @@
 import Image from "next/image";
 import React from "react";
-import { Sarabun } from "next/font/google";
-import { Kodchasan } from "next/font/google";
+import { Sarabun, Kodchasan, Poppins } from "next/font/google";
 
-const roboto = Sarabun({
+const sarabun = Sarabun({
   variable: "--font-roboto",
   subsets: ["latin"],
   weight: "400"
 });
 
-const amaranth = Kodchasan({
+const kodchasan = Kodchasan({
   variable: "--font-alata",
   subsets: ["latin"],
   weight: "400"
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: "500"
 });
 
 export default function Home() {
@@ -20,9 +25,9 @@ export default function Home() {
     <>
       <section className="">
         <div className="flex flex-col items-center bg-black text-white w-screen min-h-screen">
-          <h2 className={`text-5xl font-bold my-20 ${roboto.className}`}>WELCOME TO</h2>
-          <h1 className={`text-9xl font-bold ${amaranth.className}`}>QUANTALYZE</h1>
-          <h3 className={`text-5xl font-bold my-20 ${roboto.className}`}>SOCIAL MEDIA MARKETING</h3>
+          <h2 className={`text-5xl font-bold my-20 ${sarabun.className}`}>WELCOME TO</h2>
+          <h1 className={`text-9xl font-bold ${kodchasan.className}`}>QUANTALYZE</h1>
+          <h3 className={`text-5xl font-bold my-20 ${sarabun.className}`}>SOCIAL MEDIA MARKETING</h3>
           <div className="w-full h-auto">
             <Image src="/Hero.png" alt="Hero" width={1920} height={1080} className="w-full h-auto object-contain" />
           </div>
@@ -30,11 +35,11 @@ export default function Home() {
       </section>
       <section className="bg-[#F4C430] text-[#111827] flex flex-col items-center py-48 relative">
         <div className="px-44 grid grid-cols-5 w-full min-h-[400px]">
-          <div className="col-span-4">
-            <p className="text-xl mb-16 w-10/12">
+          <div className={`col-span-4 text-2xl ${poppins.className}`}>
+            <p className="mb-16 w-10/12">
               At Quantalyze, we are storytellers, strategists, and digital innovators passionate about helping brands thrive in the ever-evolving world of social media.
             </p>
-            <p className="text-xl mb-16 w-10/12">
+            <p className="mb-16 w-10/12">
               Our mission is to connect brands with their audiences in meaningful ways, creating authentic and impactful digital experiences that drive engagement, loyalty, and growth.
             </p>
           </div>
@@ -43,7 +48,9 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-44 w-11/12 px-20">
-          <Image src="/ads.jpg" alt="Ads" width={1920} height={1080} className="w-full h-auto object-contain" />
+          <div className="border-2 border-black p-[3px] rounded-2xl">
+            <Image src="/ads.jpg" alt="Ads" width={1920} height={1080} className="w-full h-auto object-contain rounded-2xl" />
+          </div>
         </div>
       </section>
       <section className="bg-white text-black flex flex-col items-center py-20">
@@ -57,22 +64,24 @@ export default function Home() {
           <p className="text-2xl mb-8"><strong>PINTEREST OPTIMIZATION & STRATEGY:</strong> DETAILED ANALYSIS OF CAMPAIGN PERFORMANCE AND REGULAR REPORTING.</p>
         </div>
         <div className="mt-16 w-10/12 px-20">
-          <Image src="/services.jpeg" alt="Services" width={1920} height={1080} className="w-full h-auto object-contain" />
+        <div className="border-2 rounded-2xl p-[3px]">
+          <Image src="/services.jpeg" alt="Services" width={1920} height={1080} className="w-full h-auto object-contain rounded-2xl" />
+        </div>
         </div>
       </section>
       <section className="bg-[#FFD700] text-black flex flex-col items-center py-20">
-        <h2 className="text-9xl font-bold mb-10">WHY CHOOSE US</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-10 text-center mb-10">
-          <div className="p-6 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>5+ YEARS OF EXPERIENCE</strong></div>
-          <div className="p-6 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>SOCIAL MEDIA ANALYTICS</strong></div>
-          <div className="p-6 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>PERFORMANCE MARKETING</strong></div>
-          <div className="p-6 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>SEARCH ENGINE OPTIMIZATION</strong></div>
-          <div className="p-6 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>CONTENT CREATION</strong></div>
-          <div className="p-6 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>INFLUENCER PARTNERSHIPS</strong></div>
-          <div className="p-6 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>COMMUNITY MANAGEMENT</strong></div>
-          <div className="p-6 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>BRAND STORYTELLING</strong></div>
+        <h2 className="text-9xl font-bold mb-20">WHY CHOOSE US</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-16 text-center mb-10 text-xl">
+          <div className="p-10 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>5+ YEARS OF EXPERIENCE</strong></div>
+          <div className="p-10 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>SOCIAL MEDIA ANALYTICS</strong></div>
+          <div className="p-10 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>PERFORMANCE MARKETING</strong></div>
+          <div className="p-10 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>SEARCH ENGINE OPTIMIZATION</strong></div>
+          <div className="p-10 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>CONTENT CREATION</strong></div>
+          <div className="p-10 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>INFLUENCER PARTNERSHIPS</strong></div>
+          <div className="p-10 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>COMMUNITY MANAGEMENT</strong></div>
+          <div className="p-10 bg-[#E7E5DF] rounded-full shadow-md border-2 border-black"><strong>BRAND STORYTELLING</strong></div>
         </div>
-        <div className="max-w-4xl text-left text-xl">
+        <div className={`max-w-5xl text-left text-2xl ${poppins.className}`}>
           <p className="mb-4">
             Choose us to experience a partnership that’s as committed to <strong>your brand’s success</strong> as you are.
           </p>
@@ -85,7 +94,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-white text-black flex flex-col items-center py-20">
-        <h2 className="text-5xl font-bold mb-10">BRANDS WE WORKED WITH</h2>
+        <h2 className="text-9xl text-right mx-72 font-bold mb-10">BRANDS WE WORKED WITH</h2>
         <div className="grid grid-cols-5 gap-6 max-w-6xl">
           {Array.from({ length: 5 }, (_, i) => (
             <div key={i} className="flex justify-center items-center">
@@ -112,7 +121,7 @@ export default function Home() {
         <div className="w-3/4 flex justify-center mb-10">
           <Image src="/getintouch.png" alt="Get in Touch" width={1920} height={1080} className="w-full h-auto object-contain" />
         </div>
-        <div className="w-full flex flex-col items-center space-y-4">
+        <div className="w-full text-2xl flex flex-col items-center space-y-4">
           <div className="bg-[#E7E5DF] text-center py-8 px-8 border-2 border-black w-3/4">
             CONTACTUS@QUANTALYZEMARKETER.COM
           </div>
@@ -121,11 +130,11 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-[450px]">
-          <Image src="/quantalyze.png" alt="Quantalyze" width={1920} height={1080} className="w-40 h-auto object-contain" />
+          <Image src="/quantalyze.png" alt="Quantalyze" width={1920} height={1080} className="w-60 h-auto object-contain" />
         </div>
-        <div className="text-center mt-10">
-          <p className="text-lg">LEVEL UP YOUR BRAND'S SOCIAL MEDIA GAME!</p>
-          <p className="text-lg">CONNECT WITH US TODAY AND LET'S CREATE A WINNING STRATEGY TOGETHER.</p>
+        <div className="text-center mt-10 text-2xl">
+          <p>LEVEL UP YOUR BRAND'S SOCIAL MEDIA GAME!</p>
+          <p>CONNECT WITH US TODAY AND LET'S CREATE A WINNING STRATEGY TOGETHER.</p>
         </div>
       </section>
     </>
