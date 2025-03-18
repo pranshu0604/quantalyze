@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Sarabun, Kodchasan, Poppins } from "next/font/google";
+import { LucideIcon, Search, Edit, DollarSign, Users, BarChart2, Share2, MessageSquare } from "lucide-react";
 
 const sarabun = Sarabun({
   variable: "--font-roboto",
@@ -55,18 +56,35 @@ export default function Home() {
       </section>
       <section className="bg-white text-black flex flex-col items-center py-20">
         <h2 className="text-9xl font-bold mb-20">OUR SERVICES</h2>
-        <div className="w-6xl text-left">
-          <p className="text-2xl mb-8"><strong>SOCIAL MEDIA STRATEGY:</strong> CUSTOMIZED PLANS FOR CLIENTS TO GROW AND ENGAGE THEIR ONLINE COMMUNITY.</p>
-          <p className="text-2xl mb-8"><strong>CONTENT CREATION:</strong> GRAPHIC DESIGN, COPYWRITING, PHOTOGRAPHY, AND VIDEO PRODUCTION.</p>
-          <p className="text-2xl mb-8"><strong>PAID ADVERTISING:</strong> FACEBOOK ADS, INSTAGRAM ADS, GOOGLE ADS (SEARCH, DISPLAY, SHOPPING, ETC).</p>
-          <p className="text-2xl mb-8"><strong>INFLUENCER MARKETING:</strong> COLLABORATIONS WITH INFLUENCERS TO BOOST BRAND VISIBILITY.</p>
-          <p className="text-2xl mb-8"><strong>ANALYTICS & REPORTING:</strong> DETAILED ANALYSIS OF CAMPAIGN PERFORMANCE AND REGULAR REPORTING.</p>
-          <p className="text-2xl mb-8"><strong>PINTEREST OPTIMIZATION & STRATEGY:</strong> DETAILED ANALYSIS OF CAMPAIGN PERFORMANCE AND REGULAR REPORTING.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl">
+          {[
+            { icon: Search, title: "SOCIAL MEDIA STRATEGY", color: "bg-[#FFD700]" },
+            { icon: Edit, title: "CONTENT CREATION", color: "bg-[#E7E5DF]" },
+            { icon: DollarSign, title: "PAID ADVERTISING", color: "bg-[#E7E5DF]" },
+            { icon: Users, title: "INFLUENCER MARKETING", color: "bg-[#FFD700]" },
+            { icon: BarChart2, title: "ANALYTICS & REPORTING", color: "bg-[#FFD700]" },
+            { icon: Share2, title: "PINTEREST OPTIMIZATION", color: "bg-[#E7E5DF]" },
+            { icon: Search, title: "SEARCH ENGINE OPTIMIZATION", color: "bg-[#E7E5DF]" },
+            { icon: MessageSquare, title: "COMMUNITY MANAGEMENT", color: "bg-[#FFD700]" },
+          ].map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <div key={index} className="group relative cursor-pointer">
+                <div className={`absolute inset-0 ${service.color} rounded-3xl transform -rotate-6 transition-transform group-hover:rotate-0`}></div>
+                <div className="relative p-8 bg-white border-2 border-black rounded-3xl shadow-lg transform transition-transform group-hover:translate-x-2 group-hover:-translate-y-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold">{service.title}</h3>
+                    <Icon className="w-10 h-10" />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <div className="mt-16 w-10/12 px-20">
-        <div className="border-2 rounded-2xl p-[3px]">
-          <Image src="/services.jpeg" alt="Services" width={1920} height={1080} className="w-full h-auto object-contain rounded-2xl" />
-        </div>
+        <div className="mt-20 w-10/12 px-20">
+          <div className="border-2 rounded-2xl p-[3px]">
+            <Image src="/services.jpeg" alt="Services" width={1920} height={1080} className="w-full h-auto object-contain rounded-2xl" />
+          </div>
         </div>
       </section>
       <section className="bg-[#FFD700] text-black flex flex-col items-center py-20">
